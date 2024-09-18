@@ -1,5 +1,6 @@
 from tkinter import *
 import os
+
 root=Tk()
 root.title("PlantHealth")
 root.geometry('1400x750')
@@ -9,4 +10,5 @@ def open():
     root.destroy()
     os.system("software\\browse.py")
 Button(text='Start',command=open).place(x=100,y=300)
+
 root.mainloop()
