@@ -13,6 +13,6 @@ img=ImageTk.PhotoImage(image)
 Label(root,image=img).place(x=600,y=300)
 def open():
     root.destroy()
-    os.system("software\\browse.py")
+    os.system("browse.py")
 Button(text='Start',command=open).place(x=100,y=300)
 root.mainloop()

@@ -6,7 +6,7 @@ def view_result():
 def download_result():
     pass
 def add_image():
-    os.system("software\\pick.py")
+    os.system("pick.py")
 root.title("PlantHealth")
 root.geometry('1400x750')
 Label(text="Provide Details",font=('arial',40,'bold'),bg="green").place(x=550,y=100)
