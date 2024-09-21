@@ -9,7 +9,6 @@ root=Tk()
 def goback():
     root.destroy()
     os.system("Home.py")
-
 def view_result():
     root.destroy()
     os.system("result.py")
@@ -39,10 +38,6 @@ def preview_image():
     b8.place(x=580,y=360)
 
 
-
-
-
-
 root.title("PlantHealth")
 root.geometry("1910x1070")
 
@@ -53,11 +48,11 @@ Label(text="Provide Details",bg="grey",font=('arial',40,'bold')).place(x=550,y=1
 b=Button(text="⇦ Back",border=8, width=8, height=2, command=goback).place(x=5,y=5)
 
 #Selecting Browse Icon
-search=Image.open("images\\image-search.png")
+search=Image.open("image-search.png")
 search=search.resize((205,200))
 sr=ImageTk.PhotoImage(search)
 #Selecting Preview Icon
-preview=Image.open("images\\preview6.png")
+preview=Image.open("preview6.png")
 preview=preview.resize((205,200))
 pr=ImageTk.PhotoImage(preview)
 #Submit Button
