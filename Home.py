@@ -12,7 +12,7 @@ root.config(bg="#37B7C3")
 frame=Frame(root,width=1200, height=550, bg="#E7F0DC")
 frame.place(relx=0.5,rely=0.5, anchor="center")
 
-image=Image.open("p.jpg")
+image=Image.open("images\\p.jpg")
 image=image.resize((500,300))
 
 img=ImageTk.PhotoImage(image)
@@ -26,7 +26,7 @@ def open():
     root.destroy()
     os.system("browse.py")
 
-login=Image.open("image.png")
+login=Image.open("images\\image.png")
 login=login.resize((70,50))
 log=ImageTk.PhotoImage(login)
 b1=Button(image=log,bg="#c7defa", borderwidth=0,command=open).place(x=880,y=642)
