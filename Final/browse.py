@@ -6,23 +6,31 @@ from PIL import ImageTk
 from datetime import datetime
 from tkinter import filedialog, Label, Entry, Button
 root=Tk()
+#Functon for opening home page
 def goback():
     root.destroy()
     os.system("Home.py")
+
+#Function for opening result page
 def view_result():
     root.destroy()
     os.system("result.py")
-def download_result():
-    pass
+
+#function for browsing image
 def open_image():
-    file_path = filedialog.askopenfilename(filetypes=[("Image files", ".jpg;.jpeg;.png;.bmp")])
+    file_path = filedialog.askopenfilename(filetypes=[("Image files", ".jpg;.jpeg;.png;.bmp")]) 
     global image_detail
     image_detail=file_path
+    b2.config(state=NORMAL)
+
+#function for previewing image
 def preview_image():
     def change():
         global image_detail
-        image_detail=None
+        image_detail=None # Making image path none to removing the  selected image
+        b2.config(state=DISABLED)
         frame1.destroy()
+    #Frame for showing selected image
     frame1=Frame(bg="#f0eeb7",width=800,height=400)
     frame1.place(x=360,y=200)
     img1=Image.open(image_detail)
@@ -48,11 +56,11 @@ Label(text="Provide Details",bg="grey",font=('arial',40,'bold')).place(x=550,y=1
 b=Button(text="⇦ Back",border=8, width=8, height=2, command=goback).place(x=5,y=5)
 
 #Selecting Browse Icon
-search=Image.open("image-search.png")
+search=Image.open("images\\image-search.png")
 search=search.resize((205,200))
 sr=ImageTk.PhotoImage(search)
 #Selecting Preview Icon
-preview=Image.open("preview6.png")
+preview=Image.open("images\\preview1.png")
 preview=preview.resize((205,200))
 pr=ImageTk.PhotoImage(preview)
 #Submit Button
@@ -60,6 +68,7 @@ b1=Button(image=sr,bg="#73c991",border=2,command=open_image)
 Label(text="Browse Image",width=29).place(x=500,y=437)
 #Preview Button 
 b2=Button(image=pr,bg="#73c991",border=2,command=preview_image)
+b2.config(state=DISABLED)
 Label(text="Preview Image",width=29).place(x=900,y=437)
 b1.place(x=500,y=250)
 b2.place(x=900,y=250)
