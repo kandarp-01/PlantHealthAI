@@ -21,7 +21,8 @@ def open_image():
     file_path = filedialog.askopenfilename(filetypes=[("Image files", ".jpg;.jpeg;.png;.bmp")]) 
     global image_detail
     image_detail=file_path
-    b2.config(state=NORMAL)
+    if(len(image_detail)):
+        b2.config(state=NORMAL)
 
 #function for previewing image
 def preview_image():
